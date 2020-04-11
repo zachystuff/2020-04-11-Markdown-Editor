@@ -1,22 +1,63 @@
 import React from 'react';
 
 import styles from './App.module.css';
+import showdown from 'showdown';
 
-const App = () => {
+import text from './default_text';
 
-    return (
-        <div className={styles.mainContainer}>
-            <div className={styles.header}></div>
-            <div className={styles.textArea}>
-                it is important
+
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: text,
+            editedText: '',
+        };
+        this.converter = new showdown.Converter();
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+
+
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        let text = this.state.value;
+        console.log(text);
+        let html = this.converter.makeHtml(text);
+        this.setState({ editedText: html })
+    }
+
+    render() {
+        return (
+
+            <div className={styles.mainContainer}>
+                <div className={styles.header}>
+                    <h1>Markdown Editor by zachyCodes</h1>
+                </div>
+                <div className={styles.textArea}>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            <textarea value={this.state.value} onChange={this.handleChange} />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+                <div className={styles.markdownText} >
+                    <div 
+                        dangerouslySetInnerHTML={{ __html: this.state.editedText }}
+                        className={styles.editor}
+                    ></div>
+                </div>
             </div>
-            <div className={styles.markdownText}>
-                t is important
-            </div>
 
-        </div>
-    )
-
-};
+        );
+    }
+}
 
 export default App;
