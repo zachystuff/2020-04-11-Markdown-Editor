@@ -1,8 +1,8 @@
 {
   "name": "zach_yusuf_mintbean_hackathon",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Repo for Mintbean hackathon 04/11/2020",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-dev": "webpack --watch --mode development",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "hackathon",
-    "css-editor"
+    "Markdown-editor"
   ],
   "author": "Zach Yusuf",
   "license": "ISC",
@@ -42,9 +42,7 @@
     "build": "^0.1.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "markdown-it": "^10.0.0",
     "react": "^16.13.0",
-    "react-ace": "^8.1.0",
     "react-dom": "^16.13.0",
     "react-scroll-sync": "^0.7.1",
     "showdown": "^1.9.1"

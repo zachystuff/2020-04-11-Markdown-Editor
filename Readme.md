@@ -1,5 +1,45 @@
 # Today's Objective: Markdown Editor
 
+## My Entry
+
+Simple Markdown Editor by Zachycodes
+
+<img src="editor.gif" alt="editor gif">
+
+
+### [Live Demo](https://zachycodes-markdown-editor.herokuapp.com/)
+
+## Authors
+
+* **Zach Yusuf** - *Initial work* - [Simple Markdown Editor by Zachycodes](https://github.com/zachystuff/2020-04-11-Markdown-Editor)
+
+### Technologies Used
+
+<table style="{ empty-cells: hide }">
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"><b>Front-end<b></td>
+    <td align="center"><b>Back-end<b></td>
+    <td align="center"><b>Deployment<b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React" title="React" width="80px"/></td>
+    <td align="center"><img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" title="Node.js" width="60px"/></td>
+    <td align="center"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K2q0A5SX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/2elgd5zp07wkeilkna63.png" alt="Heroku" title="Heroku" width="60px"/></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://i.redd.it/3vr72d9jitw21.png" alt="CSS_Modules" title="CSS_Modules" width="80px"/></td>
+    <td align="center"><img src="https://www.resourcifi.com/wp-content/themes/resourcifi-child/img/express-min.png" alt="Express" title="Express" width="60px"/></td>
+    <td></td>
+  </tr>
+</table>
+
+#### NPM modules
+
+1.) Dual Scroll with [react-scroll-sync](https://www.npmjs.com/package/react-scroll-sync).
+2.) Markdown Logic with [showdown](https://www.npmjs.com/package/showdown).
+
 ## Prize
 
 $25 CAD Amazon gift card + bragging rights.
