@@ -46,6 +46,7 @@
     "react": "^16.13.0",
     "react-ace": "^8.1.0",
     "react-dom": "^16.13.0",
+    "react-scroll-sync": "^0.7.1",
     "showdown": "^1.9.1"
   }
 }

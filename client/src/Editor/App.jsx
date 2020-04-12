@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './App.module.css';
 import showdown from 'showdown';
+import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 
 import text from './default_text';
 
@@ -12,50 +13,46 @@ class App extends React.Component {
         super(props);
         this.state = {
             value: text,
-            editedText: '',
         };
         this.converter = new showdown.Converter();
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.setState({
+            value: event.target.value,
+        });
 
-
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        let text = this.state.value;
-        console.log(text);
-        let html = this.converter.makeHtml(text);
-        this.setState({ editedText: html })
     }
 
     render() {
         return (
+            <ScrollSync>
+                <div className={styles.mainContainer}>
+                    <div className={styles.header}>
+                        <h1>Simple Markdown Editor</h1>
+                        <span>By ZachyCodes</span>
+                    </div>
+                    <div className={styles.textArea}>
+                        <ScrollSyncPane>
+                            <textarea
+                                value={this.state.value}
+                                onChange={this.handleChange}
+                                autoFocus
+                            />
+                        </ScrollSyncPane>
+                    </div>
+                    <div className={styles.markdownText} >
+                        <ScrollSyncPane>
+                            <div
+                                dangerouslySetInnerHTML={{ __html: this.converter.makeHtml(this.state.value) }}
+                                className={styles.editor}
+                            ></div>
 
-            <div className={styles.mainContainer}>
-                <div className={styles.header}>
-                    <h1>Markdown Editor by zachyCodes</h1>
+                        </ScrollSyncPane>
+                    </div>
                 </div>
-                <div className={styles.textArea}>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            <textarea value={this.state.value} onChange={this.handleChange} />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                </div>
-                <div className={styles.markdownText} >
-                    <div 
-                        dangerouslySetInnerHTML={{ __html: this.state.editedText }}
-                        className={styles.editor}
-                    ></div>
-                </div>
-            </div>
-
+            </ScrollSync>
         );
     }
 }

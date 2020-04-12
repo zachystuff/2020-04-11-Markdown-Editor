@@ -1,14 +1,12 @@
-
-
 .mainContainer {
     display: grid;
     grid-template-columns: 45% 55%;
-    grid-template-rows: 3em 1fr;
-    grid-template-areas: 
-                        "header header"
-                        "textArea markdownText"
+    grid-template-rows: 3em 100vh;
+    grid-template-areas:
+        "header header"
+        "textArea markdownText"
     ;
-    height: 100%;
+    height: 90%;
     width: 100%;
 }
 
@@ -17,16 +15,26 @@
     grid-area: header;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: darkslateblue;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .header h1 {
-    font-family: Pacifico, cursive;
-    font-size: large;
-    color: aliceblue;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.header span {
+    font-family: Pacifico,
+        cursive;
+    font-size: 15px;
+    color: whitesmoke;
+    margin-left: 10px;
+    padding-top: 5px;
+    line-height: 1.5;
 }
 
 /* TEXT AREA STYLES */
@@ -38,44 +46,81 @@
     width: 100%;
 }
 
-.textArea form {
-    width: 100%;
-    padding-left: 0.5em;
-    height: 100%;
+.textArea textarea {
+    outline: none;
+    resize: none;
+    font-family: courier,
+        monospace;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-white-space: nowrap;
+    width: 90%;
+    height: 86%;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 5px;
     margin-top: 0.5em;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-y: auto;
+    padding: 1rem;
     
 }
 
-.textArea textarea {
-    min-height: 85%;
-    width: 95%;
-    border-radius: 10px;
-    resize: none;
-    padding: 5px;
+.textArea textarea i:hover {
+    cursor: pointer;
+}
+
+.textArea textarea i:active {
+    transition: opacity .2s;
+    opacity: 0.5;
 }
 
 
-/* MARKDOWN TEXT STYLES */ 
+/* MARKDOWN TEXT STYLES */
 .markdownText {
     grid-area: markdownText;
     height: 100%;
     overflow-wrap: break-word;
     display: flex;
     justify-content: center;
-    
+
 }
 
 .editor {
     text-overflow: ellipsis;
     white-space: nowrap;
     -moz-white-space: nowrap;
-    width: 95%;
+    width: 85%;
     height: 86%;
     border: 1px solid rgb(169, 169, 169);
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 0.5em;
     word-wrap: break-word;
     white-space: normal;
     overflow-y: auto;
-    padding: 5px;
+    background: #e8e8e8;
+    padding: 1rem;
+}
+
+.editor::-webkit-scrollbar,
+.textArea textarea::-webkit-scrollbar
+ {
+    width: 0.3em;
+}
+
+.editor::-webkit-scrollbar-track,
+.textArea textarea::-webkit-scrollbar-track
+ {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0 5px 5px 0;
+}
+
+.editor::-webkit-scrollbar-thumb,
+.textArea textarea::-webkit-scrollbar-thumb
+ {
+    background-color: darkslateblue;
+    outline: 1px solid slategrey;
+    height: 2em;
+    border-radius: 2px;
 }
